@@ -77,7 +77,7 @@ try{
   <link rel="stylesheet" href="../assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <style>
     .rightBar:hover{
-      border-bottom: 3px solid red;
+      border-bottom: 3px solid black;
      
     }
     
@@ -96,7 +96,7 @@ try{
       max-width:500px;
     }
     .content-wrapper{
-      background-image: url('../assets/logo/cover.jpg');
+      background-image: url('../assets/logo/coverbg.png');
       background-repeat:no-repeat;
 background-size:contain;
 background-size: cover;
@@ -196,33 +196,33 @@ width: 100%;
 	a.red {
 		background-color: transparent;
 		color: white;
-		border: 2px solid red;
+		border: 2px solid green;
     
 	}
 
 	a.red:hover {
-		color: rgba(239,57,50,1);
+		color: rgb(7, 156, 15);
     
 	}
 
 	a.green {
     background-color: transparent;
 		color: white;
-		border: 2px solid red;
+		border: 2px solid green;
 	}
 
 	a.green:hover {
-		color: rgba(239,57,50,1);
+		color: rgb(7, 156, 15);
 	}
 
 	a.yellow {
     background-color: transparent;
 		color: white;
-		border: 2px solid red;
+		border: 2px solid green;
 	}
 
 	a.yellow:hover {
-    color: rgba(239,57,50,1);
+   color: rgb(7, 156, 15);
 	}
 
 	.round span.round {
@@ -249,17 +249,17 @@ width: 100%;
 	}
 
 	.green span {
-		background: rgba(255,23,152,.7);		
+		background: rgba(23, 255, 100, 0.7);		
     font-weight: 900;
 	}
 
 	.red span {
-    background: rgba(255,23,152,.7);		
+   background: rgba(23, 255, 100, 0.7);	
     font-weight: 900;
 	}
 
 	.yellow span {
-		background: rgba(255,23,152,.7);		
+		background: rgba(23, 255, 100, 0.7);	
     font-weight: 900;
 
 	}
@@ -270,11 +270,11 @@ width: 100%;
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color: #0037af">
+  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(4, 4, 4)">
     <div class="container">
       <a href="#" class="navbar-brand">
-        <img src="../assets/dist/img/<?= $image  ?>" alt="logo" class="brand-image img-circle " >
-        <span class="brand-text  text-white"  style="font-weight: 700">  <?= $barangay ?> <?= $zone ?>, <?= $district ?></span>
+        <img src="../assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
+       <span class="brand-text  text-white"  style="font-weight: 700">BARANGAY POBLACION PORTAL</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -317,10 +317,10 @@ width: 100%;
     <!-- Main content -->
     <div class="content  " >
       <div class="container-fluid pt-5">
-      <div class="card "  style=" background-color: rgba(0,54,175,.75);">
+      <div class="card "  style=" background-color: rgba(37, 39, 38, 0.75);">
       
       <div class="card-body text-center text-white">
-      <img src="../assets/dist/img/<?= $image;?>" alt="logo" class="img-circle logo">
+      <img src="../assets/logo/pob icon.png" alt="logo" class="img-circle logo">
                         <h1 class="card-text" >WELCOME, <span style="font-weight: 1000; text-transform: uppercase;"><?= $first_name_user ?></span></h1>
        
         
@@ -357,7 +357,7 @@ width: 100%;
   <!-- /.content-wrapper -->
 
  
-  <footer class="main-footer text-white" style="background-color: #0037af">
+  <footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
     <div class="float-right d-none d-sm-block">
     
     </div>

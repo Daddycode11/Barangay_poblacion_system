@@ -98,7 +98,7 @@ $sql = "SELECT * FROM `barangay_information`";
       max-width:500px;
     }
     .content-wrapper{
-      background-image: url('assets/logo/cover.jpg');
+      background-image: url('assets/logo/coverbg.png');
       background-repeat: no-repeat;
       background-size: cover;
       width: 100%;
@@ -129,11 +129,11 @@ $sql = "SELECT * FROM `barangay_information`";
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color: #0037af">
+  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(0, 0, 0)">
     <div class="container">
       <a href="" class="navbar-brand">
-        <img src="assets/dist/img/<?= $image ?>" alt="logo" class="brand-image img-circle " >
-        <span class="brand-text  text-white" style="font-weight: 700">BARANGAY PORTAL</span>
+        <img src="assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
+        <span class="brand-text  text-white" style="font-weight: 700">BARANGAY POBLACION PORTAL</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,55 +170,60 @@ $sql = "SELECT * FROM `barangay_information`";
     
   
     <!-- /.content-header -->
+<!-- Main content -->
+<div class="content px-4">
+  <div class="container-fluid pt-5" style="background-color: rgba(0, 0, 0, 0.75); min-height: 100vh;">
+    <br><br>
+    <div class="row justify-content-center">
+      <form id="recoverForm" method="post">
+        <div class="card shadow-lg border-0" style="border-radius: 1rem; background-color: rgba(255,255,255,0.05); backdrop-filter: blur(10px);">
+          <div class="card-body text-center text-white px-5 py-4">
 
-    <!-- Main content -->
-    <div class="content px-4" >
-      <div class="container-fluid pt-5 "  style="background-color: rgba(0,54,175,.75);">
-      <br>
-      <br>
-        <div class="row justify-content-center">
-         <form id="recoverForm" method="post">
-          <div class="card " style="border: 10px solid rgba(0,54,175,.75); border-radius: 0;">
-            <div class="card-body text-center text-white">
-              <div class="col-sm-12">
-                <img src="assets/dist/img/<?= $image;?>" alt="logo" class="img-circle logo">
-              </div>
-              <div class="col-sm-12">
-                <h1 class="card-text" style="font-weight: 1000; color: #0036af">FORGOT PASSWORD</h1>
-              </div>
-             
-              <div class="col-sm-12 mt-4">
-                <div class="form-group">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-transparent"><i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="USERNAME OR RESIDENT NUMBER">
-                  </div>
-                </div>
-              </div>
-            <div class="col-sm-12 mt-4">
-                <button type="submit" class="btn btn-flat bg-blue btn-lg btn-block" >Recover Account</button>
+            <!-- Logo -->
+            <div class="mb-3">
+              <img src="assets/LOGO/POB ICON.PNG" alt="logo" class="img-fluid" style="max-width: 90px;">
             </div>
+
+            <!-- Heading -->
+            <h1 class="mb-3" style="font-weight: 800; color:rgb(12, 216, 12); font-family: 'Segoe UI', sans-serif; letter-spacing: 1px;">FORGOT PASSWORD</h1>
+
+            <!-- Username Input -->
+            <div class="form-group">
+              <div class="input-group mb-4 bg-white rounded shadow-sm">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-user text-primary"></i></span>
+                </div>
+                <input type="text" id="username" name="username" class="form-control border-0" placeholder="Username or Resident Number" required>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-success btn-lg btn-block shadow-sm" style="border-radius: 30px; font-weight: 600;">Recover Account</button>
+
           </div>
-          </form>
         </div>
+      </form>
+    </div>
+  </div>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+
 
   
-      
 
-      </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-      <br>
-        <br>
-        <br>
-        
        
+ 
+  <footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
+    <div class="float-right d-none d-sm-block">
+    
+    </div>
+  <i class="fas fa-map-marker-alt"></i> <?= $postal_address ?> 
+  </footer>
     </div>
     <!-- /.content -->
   </div>

@@ -156,7 +156,7 @@ try{
 }
 
 #qwe{
-  background-image: url('../assets/logo/seal.png');
+  background-image: url('../assets/logo/pob icon.png');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -187,20 +187,20 @@ if($count_official != 0){
 
 <div class="d-flex justify-content-around">
   <div >
-    <?= $image ?>
+  <img src="assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
   </div>
   <div class=" text-center" style="font-size:17pt; font-weight: 500">
     <br>
       Republic of the Philippines <br>
-      City of Manila <br>
+      Occidental Mindoro <br>
 
-                <?= $row_barangay_information['barangay'].' '. $row_barangay_information['zone'].', '.$row_barangay_information['district'] ?><br>
+                
                   <?= $row_barangay_information['address'];?>
                   <br>
                  OFFICE OF THE BARANGAY CHAIRMAN
   </div>
   <div >
-  <img src="../assets/logo/maynila.png" class="img-circle" id="maynila" alt="logo">
+  <img src="../assets/logo/pob icon.png" class="img-circle" id="maynila" alt="logo">
   </div>
 </div>
 
@@ -220,7 +220,7 @@ if($count_official != 0){
     <p class="pl-5 ml-5" style="font-size:20pt; padding: 0; margin: 0;">This is certify that <b><u style="text-transform: uppercase"><?= $row['first_name'] .' '.  $middle_name_resident . $row['last_name'].', '. $row['age']?></u></b> years of age, <?= $row['civil_status'] ?></p>
     <p class="pl-5"  style="font-size:20pt; ">whose signature appears below is a bonafide resident of this Barangay with postal address <b><?= $row_barangay_information['postal_address'] ?></b></p>
  
-    <p class="pl-5 ml-5" style="font-size:20pt; padding: 0; margin: 0;">He/She is a person of good moral character and a law-abiding citizen of </p>
+    <p class="pl-5 ml-5" style="font-size:20pt; padding: 0; margin: 0;">He/She is a person of good moral character and a law-abiding citizen of Calintaan </p>
     <p class="pl-5"  style="font-size:20pt; "><?= $row_barangay_information['barangay'] ?>, <?= $row_barangay_information['zone'] ?>. As per record, He/She has no derogatroy, no criminal record has been file against him/her in the Barangay as of this date.</p>
     <br>
     <p class="pl-5 ml-5" style="font-size:20pt; padding: 0; margin: 0;">This certification is being issued upon the request of the person </p>

@@ -98,7 +98,7 @@ $sql = "SELECT * FROM `barangay_information`";
       max-width:500px;
     }
     .content-wrapper{
-      background-image: url('assets/logo/login.png');
+      background-image: url('assets/logo/coverbg.png');
       background-repeat: no-repeat;
       background-size: cover;
       width: 100%;
@@ -129,11 +129,11 @@ $sql = "SELECT * FROM `barangay_information`";
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(7, 121, 41)">
+  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(17, 17, 17)">
     <div class="container">
       <a href="" class="navbar-brand">
-        <img src="assets/dist/img/<?= $image  ?>" alt="logo" class="brand-image img-circle " >
-        <span class="brand-text  text-white" style="font-weight: 700">BARANGAY PORTAL</span>
+        <img src="assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
+        <span class="brand-text  text-white" style="font-weight: 500">BARANGAY POBLACION PORTAL</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,66 +170,62 @@ $sql = "SELECT * FROM `barangay_information`";
     
   
     <!-- /.content-header -->
+<!-- Main content -->
+<div class="content px-4">
+  <div class="container-fluid pt-5" style="background-color: rgba(0, 0, 0, 0.75); min-height: 100vh;">
+    <br><br>
+    <div class="row justify-content-center">
+      <form id="loginForm" method="post">
+        <div class="card shadow-lg border-0" style="border-radius: 1rem; background-color: rgba(255,255,255,0.05); backdrop-filter: blur(8px);">
+          <div class="card-body text-center text-white px-5 py-4">
 
-    <!-- Main content -->
-    <div class="content px-4" >
-      <div class="container-fluid pt-5 "  style="background-color: rgba(0,54,175,.75);">
-      <br>
-      <br>
-        <div class="row justify-content-center">
-          <form id="loginForm" method="post">
-          <div class="card " style="border: 10px solid rgba(0,54,175,.75); border-radius: 0;">
-            <div class="card-body text-center text-white">
-              <div class="col-sm-12">
-                <img src="assets/dist/img/<?= $image;?>" alt="logo" class="img-circle logo">
+            <!-- Logo -->
+            <div class="mb-3">
+              <img src="assets/logo/pob icon.png" alt="logo" class="img-fluid" style="max-width: 90px;">
+            </div>
+
+            <!-- Headings -->
+            <h1 class="mb-1" style="font-weight: 800; color: rgb(6, 185, 3); font-family: 'Segoe UI', sans-serif;">BARANGAY PORTAL</h1>
+            <h4 class="mb-4" style="font-weight: 400; color: #ccc;">Welcome Back!</h4>
+
+            <!-- Username -->
+            <div class="form-group">
+              <div class="input-group mb-3 bg-white rounded">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-user text-success"></i></span>
+                </div>
+                <input type="text" id="username" name="username" class="form-control border-0" placeholder="Username or Resident Number">
               </div>
-              <div class="col-sm-12">
-                <h1 class="card-text" style="font-weight: 1000; color: #0036af">BARANGAY PORTAL</h1>
-              </div>
-             
-              <div class="col-sm-12 mt-4">
-                <div class="form-group">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-transparent"><i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="USERNAME OR RESIDENT NUMBER" >
-                  </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <div class="input-group mb-3 bg-white rounded" id="show_hide_password">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-key text-success"></i></span>
+                </div>
+                <input type="password" id="password" name="password" class="form-control border-0" placeholder="Password">
+                <div class="input-group-append">
+                  <span class="input-group-text bg-transparent border-0">
+                    <a href="#" style="color: #999;"><i class="fas fa-eye-slash" aria-hidden="true"></i></a>
+                  </span>
                 </div>
               </div>
-              <div class="col-sm-12 mt-4">
-                <div  class="form-group">
-                  <div class="input-group mb-3" id="show_hide_password">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-transparent"><i class="fas fa-key"></i></span>
-                    </div>
-                    <input type="password"  id="password" name="password" class="form-control" placeholder="PASSWORD"  style="border-right: none;">
-                    <div class="input-group-append bg">
-                      <span class="input-group-text bg-transparent"> <a href="" style=" text-decoration:none;"><i class="fas fa-eye-slash" aria-hidden="true"></i></a></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <div class="col-sm-12 text-right">
-                    <a href="forgot.php">Forgot Password</a>
             </div>
-            <div class="col-sm-12 mt-4">
-                <button type="submit" class="btn btn-flat bg-blue btn-lg btn-block">Sign In</button>
+
+            <!-- Forgot password -->
+            <div class="text-right mb-3">
+              <a href="forgot.php" style="color: #8fd694; text-decoration: none;">Forgot Password?</a>
             </div>
+
+            <!-- Sign In Button -->
+            <button type="submit" class="btn btn-success btn-lg btn-block shadow-sm" style="border-radius: 30px; font-weight: 600;">Sign In</button>
+
           </div>
-          </form>
         </div>
+      </form>
 
-  
       
-
-      </div>
-
-
-      <br>
-        <br>
-        <br>
-        
        
     </div>
     <!-- /.content -->
@@ -243,7 +239,7 @@ $sql = "SELECT * FROM `barangay_information`";
 
 </div>
 <!-- ./wrapper -->
-<footer class="main-footer text-white" style="background-color: #0037af">
+<footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
     <div class="float-right d-none d-sm-block">
     
     </div>

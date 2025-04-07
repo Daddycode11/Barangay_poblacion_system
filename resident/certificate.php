@@ -96,7 +96,7 @@ try{
       max-width:500px;
     }
     .wrapper{
-      background-image: url('../assets/logo/cover.jpg');
+      background-image: url('../assets/logo/coverbg.png');
       background-repeat:no-repeat;
 
 background-size: cover;
@@ -270,11 +270,11 @@ width: 100%;
 <div class="wrapper  p-0 maring-0 bg-transparent" >
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color: #0037af">
+  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(0, 0, 0)">
     <div class="container">
       <a href="#" class="navbar-brand">
-        <img src="../assets/dist/img/<?= $image  ?>" alt="logo" class="brand-image img-circle " >
-        <span class="brand-text  text-white"  style="font-weight: 700">  <?= $barangay ?> <?= $zone ?>, <?= $district ?></span>
+        <img src="../assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
+        <span class="brand-text  text-white" style="font-weight: 500">BARANGAY POBLACION PORTAL</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -313,124 +313,130 @@ width: 100%;
     
   
     <!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+  <div class="container-fluid">
 
-    <!-- Main content -->
-    <div class="content  " >
-  
+    <div class="card shadow mt-5 border-dark rounded">
+      <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
+        <h4 class="mb-0" style="font-variant: small-caps;">List of Request 
+          <span class="badge badge-success" id="total"></span>
+        </h4>
+        <button type="button" class="btn btn-success btn-sm newRequest" data-toggle="modal" data-target="#newRequestModal">
+          <i class="fas fa-plus"></i> New Request
+        </button>
+      </div>
 
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-primary text-white">
+                  <i class="fas fa-search"></i> Search
+                </span>
+              </div>
+              <input type="text" class="form-control" id="searching" autocomplete="off" placeholder="Search purpose or status...">
+              <div class="input-group-append">
+                <span class="input-group-text bg-danger text-white" id="reset" style="cursor:pointer;">
+                  <i class="fas fa-undo"></i> Reset
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="table-responsive">
+          <table class="table table-hover table-striped table-bordered text-sm" id="tableRequest">
+            <thead class="thead-dark text-center">
+              <tr>
+                <th>Purpose</th>
+                <th>
+                  <select name="date_request" id="date_request" class="form-control form-control-sm">
+                    <option value="">Date Request</option>
+                    <?php 
+                      $blank_request = '';
+                      $sql_date_request = "SELECT date_request FROM certificate_request WHERE residence_id = ? AND date_request != ? GROUP BY date_request";
+                      $stmt_date_request = $con->prepare($sql_date_request) or die ($con->error);
+                      $stmt_date_request->bind_param('ss',$user_id,$blank_request);
+                      $stmt_date_request->execute();
+                      $result_date_request = $stmt_date_request->get_result();
+                      while($row_date_request = $result_date_request->fetch_assoc()){
+                          echo '<option value="'.$row_date_request['date_request'].'">'.date("m/d/Y", strtotime($row_date_request['date_request'])).'</option>';
+                      }
+                    ?>
+                  </select>
+                </th>
+                <th>
+                  <select name="date_issued" id="date_issued" class="form-control form-control-sm">
+                    <option value="">Date Issued</option>
+                    <?php 
+                      $blank_issued = '';
+                      $sql_date_issued = "SELECT date_issued FROM certificate_request WHERE residence_id = ? AND date_issued != ? GROUP BY date_issued";
+                      $stmt_date_issued = $con->prepare($sql_date_issued) or die ($con->error);
+                      $stmt_date_issued->bind_param('ss',$user_id,$blank_issued);
+                      $stmt_date_issued->execute();
+                      $result_date_issued = $stmt_date_issued->get_result();
+                      while($row_date_issued = $result_date_issued->fetch_assoc()){
+                          echo '<option value="'.$row_date_issued['date_issued'].'">'.date("m/d/Y", strtotime($row_date_issued['date_issued'])).'</option>';
+                      }
+                    ?>
+                  </select>
+                </th>
+                <th>
+                  <select name="date_expired" id="date_expired" class="form-control form-control-sm">
+                    <option value="">Date Expired</option>
+                    <?php 
+                      $blank_expired = '';
+                      $sql_date_expired = "SELECT date_expired FROM certificate_request WHERE residence_id = ? AND date_expired != ? GROUP BY date_expired";
+                      $stmt_date_expired = $con->prepare($sql_date_expired) or die ($con->error);
+                      $stmt_date_expired->bind_param('ss',$user_id,$blank_expired);
+                      $stmt_date_expired->execute();
+                      $result_date_expired = $stmt_date_expired->get_result();
+                      while($row_date_expired = $result_date_expired->fetch_assoc()){
+                          echo '<option value="'.$row_date_expired['date_expired'].'">'.$row_date_expired['date_expired'].'</option>';
+                      }
+                    ?>
+                  </select>
+                </th>
+                <th>
+                  <select name="status" id="status" class="form-control form-control-sm">
+                    <option value="">Status</option>
+                    <?php 
+                      $sql_status = "SELECT status FROM certificate_request WHERE residence_id = ? GROUP BY status";
+                      $stmt_status = $con->prepare($sql_status) or die ($con->error);
+                      $stmt_status->bind_param('s',$user_id);
+                      $stmt_status->execute();
+                      $result_status = $stmt_status->get_result();
+                      while($row_status = $result_status->fetch_assoc()){
+                          echo '<option value="'.$row_status['status'].'">'.$row_status['status'].'</option>';
+                      }
+                    ?>
+                  </select>
+                </th>
+                <th class="text-center">Tools</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .table th, .table td {
+  vertical-align: middle !important;
+}
 
-    <div class="container-fluid " >
+.card-title h4 {
+  font-weight: bold;
+}
 
-
-                  <div class="card mt-5" style="border: 10px solid rgba(0,54,175,.75); border-radius: 0;">
-                      <div class="card-header">
-                        <div class="card-title">
-                          <h4 style="font-variant: small-caps">List of Request <span class="badge bg-lime" id="total"></span></h4>
-                        </div>
-                        <div class="card-tools">
-                          <button type="button" class="btn bg-black elevation-5 px-3 btn-flat newRequest" data-toggle="modal" data-target="#newRequestModal"><i class="fas fa-plus"></i> New Request</button>
-                        </div>
-                      </div>
-                    <div class="card-body">
-                            <div class="row">
-                              <div class="col-sm-6">
-                                <div class="input-group input-group-md mb-3">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text bg-indigo">SEARCH</span>
-                                  </div>
-                                  <input type="text" class="form-control" id="searching" autocomplete="off">
-                                  <div class="input-group-append">
-                                    <span class="input-group-text bg-red" id="reset" type="button"><i class="fas fa-undo"></i> RESET</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                              <div class="table-responsive">
-                              <table class="table table-striped table-hover text-sm" id="tableRequest">
-                                <thead>
-                                  <tr>
-                                    <th>Purpose</th>
-                                    <th>
-                                      <select name="date_request" id="date_request" class="custom-select custom-select-sm">
-                                          <option value="">Date Request</option>
-                                              <?php 
-                                              $blank_request = '';
-                                              $sql_date_request = "SELECT date_request FROM certificate_request WHERE residence_id = ? AND date_request != ? GROUP BY date_request";
-                                              $stmt_date_request = $con->prepare($sql_date_request) or die ($con->error);
-                                              $stmt_date_request->bind_param('ss',$user_id,$blank_request);
-                                              $stmt_date_request->execute();
-                                              $result_date_request = $stmt_date_request->get_result();
-                                              while($row_date_request = $result_date_request->fetch_assoc()){
-                                                  echo '<option value="'.$row_date_request['date_request'].'">'.date("m/d/Y", strtotime($row_date_request['date_request'])).'</option>';
-                                              }
-                                              
-                                              ?>
-                                      </select>
-                                    </th>
-                                    <th>
-                                        <select name="date_issued" id="date_issued" class="custom-select custom-select-sm">
-                                                <option value="">Date Issued</option>
-                                              <?php 
-                                              $blank_issued = '';
-                                              $sql_date_issued = "SELECT date_issued FROM certificate_request WHERE residence_id = ? AND date_issued != ? GROUP BY date_issued";
-                                              $stmt_date_issued = $con->prepare($sql_date_issued) or die ($con->error);
-                                              $stmt_date_issued->bind_param('ss',$user_id,$blank_issued);
-                                              $stmt_date_issued->execute();
-                                              $result_date_issued = $stmt_date_issued->get_result();
-                                              while($row_date_issued = $result_date_issued->fetch_assoc()){
-                                                  echo '<option value="'.$row_date_issued['date_issued'].'">'.date("m/d/Y", strtotime($row_date_issued['date_issued'])).'</option>';
-                                              }
-                                              
-                                              ?>
-                                      </select>
-                                    </th>
-                                    <th>
-                                        <select name="date_expired" id="date_expired" class="custom-select custom-select-sm">
-                                                <option value="">Date Expired</option>
-                                              <?php 
-                                              $blank_expired = '';
-                                              $sql_date_expired = "SELECT date_expired FROM certificate_request WHERE residence_id = ? AND date_expired != ? GROUP BY date_expired";
-                                              $stmt_date_expired = $con->prepare($sql_date_expired) or die ($con->error);
-                                              $stmt_date_expired->bind_param('ss',$user_id,$blank_expired);
-                                              $stmt_date_expired->execute();
-                                              $result_date_expired = $stmt_date_expired->get_result();
-                                              while($row_date_expired = $result_date_expired->fetch_assoc()){
-                                                  echo '<option value="'.$row_date_expired['date_expired'].'">'.$row_date_expired['date_expired'].'</option>';
-                                              }
-                                              
-                                              ?>
-                                      </select>
-                                    </th>
-                                    <th>
-                                        <select name="status" id="status" class="custom-select custom-select-sm">
-                                                <option value="">Status</option>
-                                              <?php 
-                                            
-                                              $sql_status = "SELECT status FROM certificate_request WHERE residence_id = ? GROUP BY status";
-                                              $stmt_status = $con->prepare($sql_status) or die ($con->error);
-                                              $stmt_status->bind_param('s',$user_id);
-                                              $stmt_status->execute();
-                                              $result_status = $stmt_status->get_result();
-                                              while($row_status = $result_status->fetch_assoc()){
-                                                  echo '<option value="'.$row_status['status'].'">'.$row_status['status'].'</option>';
-                                              }
-                                              
-                                              ?>
-                                      </select>
-                                    </th>
-                                    <th class="text-center">Tools</th>
-                                  </tr>
-                                </thead>
-                                <tbody></tbody>
-                              </table>
-                              </div>
-                    </div>
-                  </div>
-
-    
-</div><!--/. container-fluid -->
-
+#reset:hover {
+  opacity: 0.8;
+}
+</style>
     
 
 
@@ -482,7 +488,7 @@ width: 100%;
   </div>
 
  
-  <footer class="main-footer text-white" style="background-color: #0037af">
+  <footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
     <div class="float-right d-none d-sm-block">
     
     </div>

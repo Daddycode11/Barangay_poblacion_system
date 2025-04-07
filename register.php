@@ -86,8 +86,8 @@ $sql = "SELECT * FROM `barangay_information`";
       max-width:500px;
     }
     .double {
-  background-color:  rgb(7, 121, 41);
-  background-image: url('assets/logo/covers.png');
+  background-color:  rgb(0, 0, 0);
+  background-image: url('assets/logo/coverbg.png');
    background-repeat: no-repeat;
       background-size: cover;
       width: 100%;
@@ -120,11 +120,11 @@ $sql = "SELECT * FROM `barangay_information`";
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(15, 138, 52)">
+  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(0, 0, 0)">
     <div class="container">
       <a href="" class="navbar-brand">
-        <img src="assets/dist/img/<?= $image  ?>" alt="logo" class="brand-image img-circle " >
-        <span class="brand-text  text-white"  style="font-weight: 700">BARANGAY PORTAL</span>
+        <img src="assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
+        <span class="brand-text  text-white"  style="font-weight: 700">BARANGAY POBLAACION PORTAL</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,106 +170,85 @@ $sql = "SELECT * FROM `barangay_information`";
 
 
     
-       
-              <div class="container-fluid py-5">
+  <div class="container-fluid py-5">
+  <form id="registerResidentForm" method="POST" enctype="multipart/form-data" autocomplete="off">
+    <div class="row">
+      <!-- Profile Column -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow h-100">
+          <div class="card-body text-center">
+            <img src="assets/logo/profiles icon.png" class="img-fluid img-thumbnail mb-3" id="image_residence" alt="Profile Picture" style="cursor: pointer; max-height: 200px;">
+            <input type="file" name="add_image_residence" id="add_image_residence" hidden>
 
-<form id="registerResidentForm" method="POST" enctype="multipart/form-data" autocomplete="off">
-<div class="row mb-3">
-  <div class="col-sm-4">
-    <div class="card  h-100">
-      <div class="card-body " style="border: 10px solid rgba(0,54,175,.75); border-radius: 0;">
-        <div class="text-center">
-          <img class="profile-user-img img-fluid img-thumbnail" src="assets/dist/img/blank_image.png" alt="User profile picture" style="cursor: pointer;" id="image_residence">
-          <input type="file" name="add_image_residence" id="add_image_residence" style="display: none;">
-        </div>
+            <h4 class="mb-1"><span id="keyup_first_name"></span> <span id="keyup_last_name"></span></h4>
 
-        <h3 class="profile-username text-center "><span id="keyup_first_name"></span> <span id="keyup_last_name"></span></h3>
+            <div class="form-group text-left">
+              <label>Voter Status</label>
+              <select class="form-control" name="add_voters" id="add_voters">
+                <option value="">Select</option>
+                <option>NO</option>
+                <option>YES</option>
+              </select>
+            </div>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="form-group">
-              <label>Voters</label>
-              <select name="add_voters" id="add_voters" class="form-control">
-                <option value=""></option>
-                <option value="NO">NO</option>
-                <option value="YES">YES</option>
+            <div class="form-group text-left">
+              <label>Gender</label>
+              <select class="form-control" name="add_gender" id="add_gender">
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+
+            <div class="form-group text-left">
+              <label>Date of Birth</label>
+              <input type="date" class="form-control" name="add_birth_date" id="add_birth_date">
+            </div>
+
+            <div class="form-group text-left">
+              <label>Place of Birth</label>
+              <input type="text" class="form-control" name="add_birth_place" id="add_birth_place">
+            </div>
+
+            <div class="form-group text-left">
+              <label>PWD</label>
+              <select class="form-control" name="add_pwd" id="add_pwd">
+                <option value="">Select</option>
+                <option>NO</option>
+                <option>YES</option>
+              </select>
+            </div>
+
+            <div class="form-group text-left" id="pwd_check" style="display:none;">
+              <label>Type of PWD</label>
+              <input type="text" class="form-control" name="add_pwd_info" id="add_pwd_info">
+            </div>
+
+            <div class="form-group text-left">
+              <label>Single Parent</label>
+              <select class="form-control" name="add_single_parent" id="add_single_parent">
+                <option value="">Select</option>
+                <option>NO</option>
+                <option>YES</option>
               </select>
             </div>
           </div>
-          <div class="col-sm-12">
-            <div class="form-group ">
-              <label >Gender</label>
-              <select name="add_gender" id="add_gender" class="form-control">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-sm-12">
-            <div class="form-group ">
-              <label >Date of Birth</label>
-              <input type="date" class="form-control" id="add_birth_date" name="add_birth_date">
-            </div>
-          </div>
-          <div class="col-sm-12">
-            <div class="form-group ">
-              <label >Place of Birth</label>
-              <input type="text" class="form-control" id="add_birth_place" name="add_birth_place">
-            </div>
-          </div>
-          <div class="col-sm-12">
-                    <div class="form-group ">
-                      <label >PWD</label>
-                      <select name="add_pwd" id="add_pwd" class="form-control">
-                      <option value=""></option>
-                        <option value="NO">NO</option>
-                        <option value="YES">YES</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-sm-12" id="pwd_check" style="display: none;">
-                    <div class="form-group ">
-                      <label >TYPE OF PWD</label>
-                        <input type="text" class="form-control" id="add_pwd_info" name="add_pwd_info">
-                    </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="form-group ">
-                      <label >Single Parent</label>
-                      <select name="add_single_parent" id="add_single_parent" class="form-control">
-                        <option value=""></option>
-                        <option value="NO">NO</option>
-                        <option value="YES">YES</option>
-                      </select>
-                    </div>
-                  </div>
         </div>
-
-
-
-       
       </div>
-      <!-- /.card-body -->
-    </div>
-  </div>
-  <div class="col-sm-8">
-    <div class="card  card-tabs h-100" style="border: 10px solid rgba(0,54,175,.75); border-radius: 0;">
-      <div class="card-header p-0 pt-1">
-        <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="basic-info-tab" data-toggle="pill" href="#basic-info" role="tab" aria-controls="basic-info" aria-selected="true">Basic Info</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="other-info-tab" data-toggle="pill" href="#other-info" role="tab" aria-controls="other-info" aria-selected="false">Other Info</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="guardian-tab" data-toggle="pill" href="#guardian" role="tab" aria-controls="guardian" aria-selected="false">Guardian</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="false">Account</a>
-          </li>
-        </ul>
-      </div>
+
+      <!-- Tabbed Content Column -->
+      <div class="col-md-8">
+        <div class="card shadow h-100 border-primary">
+          <div class="card-header p-0 border-bottom-0 bg-primary">
+            <ul class="nav nav-tabs nav-fill text-white" id="tabs" role="tablist">
+              <li class="nav-item"><a class="nav-link active" id="basic-info-tab" data-toggle="pill" href="#basic-info">Basic Info</a></li>
+              <li class="nav-item"><a class="nav-link" id="other-info-tab" data-toggle="pill" href="#other-info">Other Info</a></li>
+              <li class="nav-item"><a class="nav-link" id="guardian-tab" data-toggle="pill" href="#guardian">Guardian</a></li>
+              <li class="nav-item"><a class="nav-link" id="account-tab" data-toggle="pill" href="#account">Account</a></li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="tabContent">
+    
       <div class="card-body" >
         <div class="tab-content" id="custom-tabs-one-tabContent">
           <div class="tab-pane fade active show" id="basic-info" role="tabpanel" aria-labelledby="basic-info-tab">
@@ -485,7 +464,7 @@ $sql = "SELECT * FROM `barangay_information`";
   <!-- /.content-wrapper -->
 
  
-  <footer class="main-footer text-white" style="background-color: #0037af">
+  <footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
     <div class="float-right d-none d-sm-block">
     
     </div>

@@ -417,14 +417,9 @@ input:checked + .slider .off{
   <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-no-expand">
     <!-- Brand Logo -->
     <a href="#" class="brand-link text-center">
-    <?php 
-        if($image != '' || $image != null || !empty($image)){
-          echo '<img src="'.$image_path.'" id="logo_image" class="img-circle elevation-5 img-bordered-sm" alt="logo" style="width: 70%;">';
-        }else{
-          echo ' <img src="../assets//logo//logo.png" id="logo_image" class="img-circle elevation-5 img-bordered-sm" alt="logo" style="width: 70%;">';
-        }
 
-      ?>
+ <img src="../assets/logo/pob icon.png" alt="logo" class="img-circle logo" id="logo_image" class="img-circle elevation-5 img-bordered-sm" alt="logo" style="width: 70%;">';
+
       <span class="brand-text font-weight-light"></span>
     </a>
 

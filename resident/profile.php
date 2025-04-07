@@ -105,7 +105,7 @@ try{
       max-width:500px;
     }
     .content-wrapper{
-      background-image: url('../assets/logo/cover.jpg');
+      background-image: url('../assets/logo/coverbg.png');
       background-repeat:no-repeat;
 background-size:contain;
 background-size: cover;
@@ -136,11 +136,11 @@ width: 100%;
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color: #0037af">
+  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(3, 3, 3)">
     <div class="container">
       <a href="#" class="navbar-brand">
-        <img src="../assets/dist/img/<?= $image  ?>" alt="logo" class="brand-image img-circle " >
-        <span class="brand-text  text-white"  style="font-weight: 700">  <?= $barangay ?> <?= $zone ?>, <?= $district ?></span>
+        <img src="../assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
+                <span class="brand-text  text-white"  style="font-weight: 700">BARANGAY POBLACION PORTAL</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -180,105 +180,97 @@ width: 100%;
   
     <!-- /.content-header -->
 
-    <!-- Main content -->
-    <div class="content  " >
-    <div class="container-fluid pt-5 "  style="background-color: rgba(0,54,175,.75);">
-      <br>
-      <br>
-        <div class="row justify-content-center">
-          <form id="changeProfile" method="post">
-          <div class="card " style="border: 10px solid rgba(0,54,175,.75); border-radius: 0;">
-            <div class="card-body text-white">
-              <div class="col-sm-12 text-center">
-              <?=$iamge_resident ?>
-              </div>
-              <div class="col-sm-12">
-                <h5 class="card-text" style="font-weight: 1000; color: #0036af">RESIDENT NUMBER - <?= $user_id; ?></h5>
-              </div>
+  <!-- Main content -->
+<div class="content">
+  <div class="container-fluid pt-5" style="background-color: rgba(0, 0, 0, 0.75); min-height: 100vh;">
+    <br><br>
+    <div class="row justify-content-center">
+      <form id="changeProfile" method="post">
+        <div class="card shadow-lg" style="border: 5px solid rgba(0, 175, 0, 0.75); border-radius: 1rem; background-color: rgba(255,255,255,0.05); backdrop-filter: blur(8px);">
+          <div class="card-body text-white px-5 py-4">
 
-              <div class="col-sm-12 mt-4">
-                <div class="form-group">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-transparent"><i class="fas fa-user"></i></span>
-                    </div>
-                    <input type="text" id="username" name="username" class="form-control" placeholder="USERNAME" value="<?= $username ?>">
-                  </div>
+            <!-- Profile Image -->
+            <div class="col-sm-12 text-center mb-3">
+              <?= $iamge_resident ?>
+            </div>
+
+            <!-- Resident ID -->
+            <div class="col-sm-12 text-center mb-4">
+              <h5 class="text-uppercase font-weight-bold" style="color: #0ecb37; font-family: 'Poppins', sans-serif;">
+                RESIDENT NUMBER - <?= $user_id; ?>
+              </h5>
+            </div>
+
+            <!-- Username Field -->
+            <div class="form-group">
+              <div class="input-group mb-3 bg-white rounded shadow-sm">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-user text-success"></i></span>
+                </div>
+                <input type="text" id="username" name="username" class="form-control border-0" placeholder="USERNAME" value="<?= $username ?>" required>
+              </div>
+            </div>
+
+            <!-- Old Password -->
+            <div class="form-group">
+              <div class="input-group mb-3 bg-white rounded shadow-sm" id="show_hide_password_old">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-key text-danger"></i></span>
+                </div>
+                <input type="password" id="old_password" name="old_password" class="form-control border-0" placeholder="OLD PASSWORD" required>
+                <div class="input-group-append">
+                  <span class="input-group-text bg-transparent border-0"><a href="#"><i class="fas fa-eye-slash text-muted"></i></a></span>
                 </div>
               </div>
-              <div class="col-sm-12 mt-4">
-                <div  class="form-group">
-                  <div class="input-group mb-3" id="show_hide_password_old">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-transparent"><i class="fas fa-key"></i></span>
-                    </div>
-                    <input type="password"  id="old_password" name="old_password" class="form-control" placeholder="OLD PASSWORD"  style="border-right: none;">
-                    <div class="input-group-append bg">
-                      <span class="input-group-text bg-transparent"> <a href="" style=" text-decoration:none;"><i class="fas fa-eye-slash" aria-hidden="true"></i></a></span>
-                    </div>
-                  </div>
+            </div>
+
+            <!-- New Password -->
+            <div class="form-group">
+              <div class="input-group mb-3 bg-white rounded shadow-sm" id="show_hide_password">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-key text-warning"></i></span>
+                </div>
+                <input type="password" id="new_password" name="new_password" class="form-control border-0" placeholder="NEW PASSWORD" required>
+                <div class="input-group-append">
+                  <span class="input-group-text bg-transparent border-0"><a href="#"><i class="fas fa-eye-slash text-muted"></i></a></span>
                 </div>
               </div>
-              <div class="col-sm-12 mt-4">
-                <div  class="form-group">
-                  <div class="input-group mb-3" id="show_hide_password">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-transparent"><i class="fas fa-key"></i></span>
-                    </div>
-                    <input type="password"  id="new_password" name="new_password" class="form-control" placeholder="NEW PASSWORD"  style="border-right: none;">
-                    <div class="input-group-append bg">
-                      <span class="input-group-text bg-transparent"> <a href="" style=" text-decoration:none;"><i class="fas fa-eye-slash" aria-hidden="true"></i></a></span>
-                    </div>
-                  </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+              <div class="input-group mb-4 bg-white rounded shadow-sm" id="show_hide_password_confirm">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-key text-info"></i></span>
+                </div>
+                <input type="password" id="edit_confirm_password" name="edit_confirm_password" class="form-control border-0" placeholder="CONFIRM PASSWORD" required>
+                <div class="input-group-append">
+                  <span class="input-group-text bg-transparent border-0"><a href="#"><i class="fas fa-eye-slash text-muted"></i></a></span>
                 </div>
               </div>
-              <div class="col-sm-12 mt-4">
-                <div  class="form-group">
-                  <div class="input-group mb-3" id="show_hide_password_confirm">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-transparent"><i class="fas fa-key"></i></span>
-                    </div>
-                    <input type="password"  id="edit_confirm_password" name="edit_confirm_password" class="form-control" placeholder="CONFIRM PASSWORD"  style="border-right: none;" >
-                    <div class="input-group-append bg">
-                      <span class="input-group-text bg-transparent"> <a href="" style=" text-decoration:none;"><i class="fas fa-eye-slash" aria-hidden="true"></i></a></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <div class="col-sm-12 mt-4">
-                <button type="submit" class="btn btn-flat bg-blue btn-lg btn-block elevation-5">CHANGE PROFILE</button>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-success btn-lg btn-block font-weight-bold shadow-sm" style="border-radius: 30px;">CHANGE PROFILE</button>
             </div>
           </div>
-          </form>
         </div>
-
-  
-      
-
-      </div>
-
-
-      <br>
-        <br>
-        <br>
-
-
-
-        </div>
-
-
-     
-          
-               
-      
-     
+      </form>
     </div>
-    <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+
+      
 
  
-  <footer class="main-footer text-white" style="background-color: #0037af">
+  <footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
     <div class="float-right d-none d-sm-block">
     
     </div>

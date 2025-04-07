@@ -156,7 +156,7 @@ try{
 }
 
 #qwe{
-  background-image: url('../assets/logo/seal.png');
+  background-image: url('../assets/logo/pob iconss.png');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -187,20 +187,20 @@ if($count_official != 0){
 
 <div class="d-flex justify-content-around">
   <div >
-    <?= $image ?>
+ 
   </div>
   <div class=" text-center" style="font-size:17pt; font-weight: 500">
     <br>
       Republic of the Philippines <br>
-      City of Manila <br>
+      Occidental Mindoro <br>
 
-                <?= $row_barangay_information['barangay'].' '. $row_barangay_information['zone'].', '.$row_barangay_information['district'] ?><br>
+                
                   <?= $row_barangay_information['address'];?>
                   <br>
                  OFFICE OF THE BARANGAY CHAIRMAN
   </div>
   <div >
-  <img src="../assets/logo/maynila.png" class="img-circle" id="maynila" alt="logo">
+  <img src="../assets/logo/pob icon.png" class="img-circle" id="maynila" alt="logo">
   </div>
 </div>
 

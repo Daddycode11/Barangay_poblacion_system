@@ -143,7 +143,7 @@ function make_slides($con){
       max-width:500px;
     }
     .content-wrapper{
-      background-image: url('assets/logo/covers.png');
+      background-image: url('assets/logo/coverbg.png');
       background-repeat:no-repeat;
 background-size:contain;
 background-size: cover;
@@ -176,11 +176,11 @@ width: 100%;
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color: #0037af">
+  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(0, 0, 0)">
     <div class="container">
       <a href="" class="navbar-brand">
-        <img src="assets/dist/img/<?= $image  ?>" alt="logo" class="brand-image img-circle " >
-        <span class="brand-text  text-white"  style="font-weight: 700">BARANGAY PORTAL</span>
+        <img src="assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
+        <span class="brand-text  text-white"  style="font-weight: 700">BARANGAY POBLACION PORTAL</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -221,11 +221,11 @@ width: 100%;
     <!-- Main content -->
     <div class="content  " >
       <div class="container-fluid pt-5">
-      <div class="card "  style=" background-color: rgba(0,54,175,.75);">
+      <div class="card "  style=" background-color: rgba(170, 214, 197, 0.75);">
       
       <div class="card-body text-center text-white">
       <h1 class="card-text" style="font-weight: 1000">WELCOME</h1>
-        <img src="assets/dist/img/<?= $image;?>" alt="logo" class="img-circle logo">
+        <img src="assets/logo/pob icon.png" alt="logo" class="img-circle logo">
         
           <h1 class="card-text" style="font-weight: 1000; text-transform: uppercase; "><?= $barangay ?> <?= $zone ?>, <?= $district ?></h1>
           <br>
@@ -295,7 +295,7 @@ width: 100%;
   <!-- /.content-wrapper -->
 
  
-  <footer class="main-footer text-white" style="background-color: #0037af">
+  <footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
     <div class="float-right d-none d-sm-block">
     
     </div>

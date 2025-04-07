@@ -270,11 +270,11 @@ width: 100%;
 <div class="wrapper  p-0 maring-0 bg-transparent" >
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color: #0037af">
+  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(5, 5, 5)">
     <div class="container">
       <a href="#" class="navbar-brand">
-        <img src="../assets/dist/img/<?= $image  ?>" alt="logo" class="brand-image img-circle " >
-        <span class="brand-text  text-white"  style="font-weight: 700">  <?= $barangay ?> <?= $zone ?>, <?= $district ?></span>
+        <img src="../assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
+                <span class="brand-text  text-white"  style="font-weight: 700">BARANGAY POBLACION PORTAL</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -322,7 +322,7 @@ width: 100%;
 
     <div class="container-fluid pt-5">
           <input type="hidden" value="<?=$user_id; ?>" id="edit_residence_id">
-        <div class="card mt-5" style="border: 10px solid rgba(0,54,175,.75); border-radius: 0;">
+        <div class="card mt-5" style="; border-radius: 0;">
             <div class="card-header">
               <div class="card-title">
                 <h4>Record List</h4>
@@ -366,7 +366,7 @@ width: 100%;
  
 
  
-  <footer class="main-footer text-white" style="background-color: #0037af">
+  <footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
     <div class="float-right d-none d-sm-block">
     
     </div>
