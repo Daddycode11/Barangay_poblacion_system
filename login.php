@@ -129,7 +129,8 @@ $sql = "SELECT * FROM `barangay_information`";
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(17, 17, 17)">
+  <nav class="main-header navbar navbar-expand-md" style="background-color: #006400;">
+
     <div class="container">
       <a href="" class="navbar-brand">
         <img src="assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
@@ -152,12 +153,7 @@ $sql = "SELECT * FROM `barangay_information`";
           <li class="nav-item">
             <a href="index.php" class="nav-link text-white rightBar" >HOME</a>
           </li>
-          <li class="nav-item">
-            <a href="register.php" class="nav-link text-white rightBar"><i class="fas fa-user-plus"></i> REGISTER</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-white rightBar" style="  border-bottom: 3px solid red;"><i class="fas fa-user-alt"></i> LOGIN</a>
-          </li>
+          
       </ul>
     </div>
   </nav>
@@ -172,60 +168,60 @@ $sql = "SELECT * FROM `barangay_information`";
     <!-- /.content-header -->
 <!-- Main content -->
 <div class="content px-4">
-  <div class="container-fluid pt-5" style="background-color: rgba(0, 0, 0, 0.75); min-height: 100vh;">
-    <br><br>
-    <div class="row justify-content-center">
-      <form id="loginForm" method="post">
-        <div class="card shadow-lg border-0" style="border-radius: 1rem; background-color: rgba(255,255,255,0.05); backdrop-filter: blur(8px);">
-          <div class="card-body text-center text-white px-5 py-4">
+  <br><br>
+  <div class="row justify-content-center">
+    <form id="loginForm" method="post">
+      <div class="card shadow-lg border-0" style="border-radius: 1rem; background-color: #ffffff; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+        <div class="card-body text-center px-5 py-4">
 
-            <!-- Logo -->
-            <div class="mb-3">
-              <img src="assets/logo/pob icon.png" alt="logo" class="img-fluid" style="max-width: 90px;">
-            </div>
-
-            <!-- Headings -->
-            <h1 class="mb-1" style="font-weight: 800; color: rgb(6, 185, 3); font-family: 'Segoe UI', sans-serif;">BARANGAY PORTAL</h1>
-            <h4 class="mb-4" style="font-weight: 400; color: #ccc;">Welcome Back!</h4>
-
-            <!-- Username -->
-            <div class="form-group">
-              <div class="input-group mb-3 bg-white rounded">
-                <div class="input-group-prepend">
-                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-user text-success"></i></span>
-                </div>
-                <input type="text" id="username" name="username" class="form-control border-0" placeholder="Username or Resident Number">
-              </div>
-            </div>
-
-            <!-- Password -->
-            <div class="form-group">
-              <div class="input-group mb-3 bg-white rounded" id="show_hide_password">
-                <div class="input-group-prepend">
-                  <span class="input-group-text bg-transparent border-0"><i class="fas fa-key text-success"></i></span>
-                </div>
-                <input type="password" id="password" name="password" class="form-control border-0" placeholder="Password">
-                <div class="input-group-append">
-                  <span class="input-group-text bg-transparent border-0">
-                    <a href="#" style="color: #999;"><i class="fas fa-eye-slash" aria-hidden="true"></i></a>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Forgot password -->
-            <div class="text-right mb-3">
-              <a href="forgot.php" style="color: #8fd694; text-decoration: none;">Forgot Password?</a>
-            </div>
-
-            <!-- Sign In Button -->
-            <button type="submit" class="btn btn-success btn-lg btn-block shadow-sm" style="border-radius: 30px; font-weight: 600;">Sign In</button>
-
+          <!-- Logo -->
+          <div class="mb-3">
+            <img src="assets/logo/pob icon.png" alt="logo" class="img-fluid" style="max-width: 90px;">
           </div>
-        </div>
-      </form>
 
-      
+          <!-- Headings -->
+          <h1 class="mb-1" style="font-weight: 700; color: #06b903; font-family: 'Segoe UI', sans-serif;">BARANGAY PORTAL</h1>
+          <h4 class="mb-4" style="font-weight: 400; color: #666;">Welcome Back!</h4>
+
+          <!-- Username -->
+          <div class="form-group">
+            <div class="input-group mb-3 bg-light rounded">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-transparent border-0"><i class="fas fa-user text-success"></i></span>
+              </div>
+              <input type="text" id="username" name="username" class="form-control border" style="border-color: #ccc;" placeholder="Username or Resident Number">
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <div class="input-group mb-3 bg-light rounded" id="show_hide_password">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-transparent border-0"><i class="fas fa-key text-success"></i></span>
+              </div>
+              <input type="password" id="password" name="password" class="form-control border" style="border-color: #ccc;" placeholder="Password">
+              <div class="input-group-append">
+                <span class="input-group-text bg-transparent border-0">
+                  <a href="#" style="color: #999;"><i class="fas fa-eye-slash" aria-hidden="true"></i></a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Forgot password -->
+          <div class="text-right mb-3">
+            <a href="forgot.php" style="color: #06b903; text-decoration: none;">Forgot Password?</a>
+          </div>
+
+          <!-- Sign In Button -->
+          <button type="submit" class="btn btn-success btn-lg btn-block shadow-sm" style="border-radius: 30px; font-weight: 600;">Sign In</button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
        
     </div>
     <!-- /.content -->
@@ -238,14 +234,6 @@ $sql = "SELECT * FROM `barangay_information`";
 
 
 </div>
-<!-- ./wrapper -->
-<footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
-    <div class="float-right d-none d-sm-block">
-    
-    </div>
-  <i class="fas fa-map-marker-alt"></i> <?= $postal_address ?> 
-  </footer>
-
 
 
 

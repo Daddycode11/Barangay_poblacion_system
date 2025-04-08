@@ -120,7 +120,7 @@ $sql = "SELECT * FROM `barangay_information`";
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md " style="background-color:rgb(0, 0, 0)">
+  <nav class="main-header navbar navbar-expand-md" style="background-color: #006400;">
     <div class="container">
       <a href="" class="navbar-brand">
         <img src="assets/logo/pob icon.png" alt="logo" class="brand-image img-circle " >
@@ -143,12 +143,7 @@ $sql = "SELECT * FROM `barangay_information`";
           <li class="nav-item">
             <a href="index.php" class="nav-link text-white rightBar" >HOME</a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-white rightBar" style="  border-bottom: 3px solid red;"><i class="fas fa-user-plus"></i> REGISTER</a>
-          </li>
-          <li class="nav-item">
-            <a href="login.php" class="nav-link text-white rightBar"><i class="fas fa-user-alt"></i> LOGIN</a>
-          </li>
+          
       </ul>
     </div>
   </nav>
@@ -464,13 +459,79 @@ $sql = "SELECT * FROM `barangay_information`";
   <!-- /.content-wrapper -->
 
  
-  <footer class="main-footer text-white" style="background-color:rgb(0, 0, 0)">
-    <div class="float-right d-none d-sm-block">
+
+ <!-- Footer Section -->
+ <footer class="bg-success text-white text-center text-md-left py-4" style="background-color: #06b903;">
+
+<div class="container">
+  <!-- Footer Top Section: Links and Info -->
+  <div class="row">
     
+    <!-- About Us Section -->
+    <div class="col-md-4 mb-4">
+      <h5 class="text-white">About Us</h5>
+      <p>Barangay Poblacion Web Portal serves as the official online platform to access government services, announcements, and local information for the residents of Barangay Poblacion.</p>
     </div>
-  <i class="fas fa-map-marker-alt"></i> <?= $postal_address ?> 
-  </footer>
- 
+    
+    <!-- Contact Us Section -->
+    <div class="col-md-4 mb-4">
+      <h5 class="text-white">Contact Us</h5>
+      <p><i class="fas fa-phone"></i> +123 456 7890</p>
+      <p><i class="fas fa-envelope"></i> info@barangaypoblacion.ph</p>
+      <p><i class="fas fa-map-marker-alt"></i> Barangay Poblacion, City Name</p>
+    </div>
+    
+    <!-- Quick Links Section -->
+    <div class="col-md-4 mb-4">
+      <h5 class="text-white">Quick Links</h5>
+      <ul class="list-unstyled">
+        <li><a href="about.php" class="text-white" style="text-decoration: none;">About Us</a></li>
+        <li><a href="services.php" class="text-white" style="text-decoration: none;">Our Services</a></li>
+        <li><a href="privacy.php" class="text-white" style="text-decoration: none;">Privacy Policy</a></li>
+        <li><a href="terms.php" class="text-white" style="text-decoration: none;">Terms of Service</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom Section: Social Icons and Copyright -->
+  <div class="social-icons text-center mt-3">
+    <a href="#" class="text-white mx-2" style="text-decoration: none; font-size: 20px;">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="#" class="text-white mx-2" style="text-decoration: none; font-size: 20px;">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="#" class="text-white mx-2" style="text-decoration: none; font-size: 20px;">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <p class="text-center mt-3" style="font-size: 14px;">&copy; 2025 Barangay Poblacion Web Portal. All Rights Reserved.</p>
+</div>
+
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</footer>
+<style>
+footer {
+  background-color: #06b903; /* Bright green background */
+}
+
+footer .social-icons a:hover {
+  color: #ffdf00; /* Gold color on hover */
+}
+
+footer p {
+  font-size: 14px;
+}
+
+footer .social-icons i {
+  transition: color 0.3s ease;
+}
+</style>
 
 
 </div>
